@@ -8,6 +8,8 @@ import <%= packageName %>.security.SecurityUtils;
 import <%= packageName %>.utils.*;
 import <%= packageName %>.utils.exception.ApplicationErrorEnum;
 import <%= packageName %>.utils.exception.Preconditions;
+import <%= packageName %>.utils.grid.GridPageRequest;
+import <%= packageName %>.utils.grid.GridReturnData;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 <% if(!useLombok){ %>import org.slf4j.Logger;
@@ -228,15 +230,7 @@ public class <%= domainName %>Service {
      */
     public GridReturnData<<%= domainName %>DTO> selectPage(GridPageRequest gridPageRequest){
         GridReturnData<<%= domainName %>DTO> mGridReturnData = new GridReturnData<>();
-        List<GridFilterInfo> filterList = gridPageRequest.getFilterList();
-        Map<String, Object> map = new HashMap<>(2);
-        filterList.forEach(gridFilterInfo -> {
-            if(gridFilterInfo.getFilterKey() != null && gridFilterInfo.getFilterValue() != null){
-                map.put(gridFilterInfo.getFilterKey(), gridFilterInfo.getFilterValue());
-            }
-        });
-        map.put("searchKey", gridPageRequest.getSearchKey());
-        // 对map中的参数的合法性进行校验
+        Map<String, Object> map = gridPageRequest.getInitMap();
 
         String sortMyBatisByString = gridPageRequest.getSortMybatisString();
         PageHelper.startPage(gridPageRequest.getPageNum(), gridPageRequest.getPageSize(), sortMyBatisByString);

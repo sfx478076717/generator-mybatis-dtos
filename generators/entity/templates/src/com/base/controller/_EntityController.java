@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.*;
 
 import <%= packageName %>.domain.<%= subPackageName %>.dto.<%= domainName %>DTO;
 import <%= packageName %>.service.<%= subPackageName %>.<%= domainName %>Service;
-import <%= packageName %>.utils.GridPageRequest;
-import <%= packageName %>.utils.GridReturnData;
+import <%= packageName %>.utils.grid.GridPageRequest;
+import <%= packageName %>.utils.grid.GridReturnData;
 import <%= packageName %>.utils.Result;
 
 <% if(useLombok){ %>import lombok.RequiredArgsConstructor;<% } %>

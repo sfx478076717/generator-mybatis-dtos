@@ -1,6 +1,6 @@
 package <%= packageName %>.controller.mapstruct.<%= subPackageName %>;
 
-import <%= packageName %>.controller.mapstruct.EntityMapper;
+import <%= packageName %>.mapstruct.EntityMapper;
 import <%= packageName %>.domain.<%= subPackageName %>.<%= domainName %>;
 import <%= packageName %>.domain.<%= subPackageName %>.dto.<%= domainName %>DTO;
 import org.mapstruct.Mapper;

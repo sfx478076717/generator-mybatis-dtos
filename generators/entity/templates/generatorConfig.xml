@@ -5,8 +5,11 @@
 <generatorConfiguration>
     <!-- 生成器配置 -->
     <context id="DB2Tables" defaultModelType="flat" targetRuntime="MyBatis3">
-        <!-- <plugin type="com.itfsw.mybatis.generator.plugins.ModelColumnPlugin"/>
-        <plugin type="com.itfsw.mybatis.generator.plugins.SelectSelectivePlugin"/> -->
+
+      <property name="javaFileEncoding" value="UTF-8"/>
+
+      <!-- <plugin type="com.itfsw.mybatis.generator.plugins.ModelColumnPlugin"/>
+      <plugin type="com.itfsw.mybatis.generator.plugins.SelectSelectivePlugin"/> -->
 
         <!-- <plugin type="cc.bandaotixi.plugins.BatchInsertPlugin"></plugin>
         <plugin type="cc.bandaotixi.plugins.BatchUpdatePlugin"></plugin> -->
